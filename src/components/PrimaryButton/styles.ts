@@ -10,3 +10,10 @@ export const StyledTouchableOpacity = styled.TouchableOpacity`
   background-color: ${({theme}) => theme.colors.darkGreen};
   border-radius: 10px;
 `;
+
+export const Styledtext = styled.Text`
+  font-family: 'Inter-Bold';
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+`;
