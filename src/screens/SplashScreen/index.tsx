@@ -5,7 +5,10 @@ import {StyledView} from './styled';
 
 const SplashScreen = ({navigation}: any) => {
   const animationOnFinish = () => {
-    navigation.navigate('Main');
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'Main'}],
+    });
   };
 
   return (
