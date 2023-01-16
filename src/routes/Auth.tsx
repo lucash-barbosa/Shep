@@ -2,26 +2,32 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 
-const AppNavigator = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 import SplashScreen from '../screens/SplashScreen';
 import Main from '../screens/Main';
+import Sign from '../screens/Sign';
 
 const Auth = () => {
   return (
     <NavigationContainer>
-      <AppNavigator.Navigator>
-        <AppNavigator.Screen
+      <Stack.Navigator>
+        <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
           options={{headerShown: false}}
         />
-        <AppNavigator.Screen
+        <Stack.Screen
           name="Main"
           component={Main}
           options={{headerShown: false}}
         />
-      </AppNavigator.Navigator>
+        <Stack.Screen
+          name="Sign"
+          component={Sign}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
