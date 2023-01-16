@@ -1,39 +1,40 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 import PrimaryButton from '../../components/PrimaryButton';
-import main from '../../assets/images/main.png';
+import {StackProps} from '../../interfaces/Navigation';
+import {mainMocks} from '../../mocks';
 import {
   StyledImage,
   StyledText,
   StyledTitle,
   ViewText,
   ViewButton,
-  SignUpButton,
-  SignUpText,
 } from './styles';
-import {mainMocks} from '../../mocks';
 
-const Main = () => {
+import main from '../../assets/images/main.png';
+import SecundaryButton from '../../components/SecundaryButton';
+
+const Main = ({navigation}: StackProps) => {
   return (
     <SafeAreaView>
       <View>
-        <StatusBar barStyle="dark-content" backgroundColor="transparent" />
         <StyledImage
           source={main}
           accessibilityLabel="Mulher segurando sacolas"
         />
         <ViewText>
-          <StyledTitle>{mainMocks.title}</StyledTitle>
-          <StyledText>{mainMocks.description}</StyledText>
+          <StyledTitle>{mainMocks.main.title}</StyledTitle>
+          <StyledText>{mainMocks.main.description}</StyledText>
         </ViewText>
         <ViewButton>
           <PrimaryButton
             onPress={() => console.log('botão pressionado')}
-            text="Login"
+            text="Log In"
           />
-          <SignUpButton>
-            <SignUpText>Inscrever-se</SignUpText>
-          </SignUpButton>
+          <SecundaryButton
+            onPress={() => navigation.navigate('Sign')}
+            text="Sign Up"
+          />
         </ViewButton>
       </View>
     </SafeAreaView>

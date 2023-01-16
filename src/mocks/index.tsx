@@ -1,5 +1,11 @@
 export const mainMocks = {
-  title: 'Todas as suas compras em um aplicativo',
-  description:
-    'Venda seus dispositivos da maneira mais inteligente e rápida para obter dinheiro imediato e uma consciência mais limpa.',
+  main: {
+    title: 'All your shopping in one App',
+    description:
+      'Sell your devices the smarter, faster way for immediate cash and a cleaner conscience.',
+  },
+  signup: {
+    title: 'Sign Up',
+    subtitle: 'Welcome! Already have a account?',
+  },
 };
