@@ -1,5 +1,5 @@
 import React from 'react';
-import {Styledtext, StyledTouchableOpacity} from './styles';
+import {StyledPrimaryButton, StyledPrimaryButtonText} from './styles';
 
 type Props = {
   onPress: () => void;
@@ -8,9 +8,9 @@ type Props = {
 
 const PrimaryButton = ({text, onPress}: Props) => {
   return (
-    <StyledTouchableOpacity onPress={onPress}>
-      <Styledtext>{text}</Styledtext>
-    </StyledTouchableOpacity>
+    <StyledPrimaryButton onPress={onPress}>
+      <StyledPrimaryButtonText>{text}</StyledPrimaryButtonText>
+    </StyledPrimaryButton>
   );
 };
 

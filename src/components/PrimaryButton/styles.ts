@@ -1,15 +1,15 @@
 import styled from 'styled-components/native';
 
-export const StyledTouchableOpacity = styled.TouchableOpacity`
-  flex-grow: 1;
+export const StyledPrimaryButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
+  padding: 0 15%;
   height: 45px;
   background-color: ${({theme}) => theme.colors.darkGreen};
   border-radius: 10px;
 `;
 
-export const Styledtext = styled.Text`
+export const StyledPrimaryButtonText = styled.Text`
   font-family: 'Inter-Bold';
   font-size: 14px;
   line-height: 17px;
