@@ -1,22 +1,26 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {StyledInput} from './styles';
+import {Error, StyledInput, Wrapper} from './styles';
 
 type Props = {
-  placeholder?: string;
+  [key: string]: any;
+  error?: string | undefined;
 };
 
-const DefaultInput = ({placeholder}: Props) => {
+const DefaultInput = ({error, ...props}: Props) => {
   return (
-    <StyledInput
-      placeholder={placeholder}
-      placeholderTextColor="#cacaca"
-      style={{
-        fontFamily: 'Inter-Regular',
-        color: '#000',
-      }}
-      secureTextEntry={false}
-    />
+    <Wrapper>
+      <StyledInput
+        {...props}
+        placeholderTextColor="#cacaca"
+        style={{
+          fontFamily: 'Inter-Regular',
+          color: '#000',
+        }}
+        secureTextEntry={false}
+      />
+      {error !== undefined && <Error>{error}</Error>}
+    </Wrapper>
   );
 };
 

@@ -1,22 +1,22 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {View} from 'react-native';
-import {StyledButton, StyledInput} from './styles';
+import {Error, StyledButton, StyledInput, Wrapper} from './styles';
 
 import EyeOpen from '../../assets/icons/eye-open.svg';
 import EyeClose from '../../assets/icons/eye-close.svg';
 
 type Props = {
-  placeholder?: string;
+  [key: string]: any;
+  error?: string | undefined;
 };
 
-const InputPassword = ({placeholder}: Props) => {
+const InputPassword = ({error, ...props}: Props) => {
   const [hideText, setHideText] = useState(false);
 
   return (
-    <View>
+    <Wrapper>
       <StyledInput
-        placeholder={placeholder}
+        {...props}
         placeholderTextColor="#cacaca"
         style={{
           fontFamily: 'Inter-Regular',
@@ -31,7 +31,8 @@ const InputPassword = ({placeholder}: Props) => {
           <EyeClose fill={'#0DA54B'} />
         )}
       </StyledButton>
-    </View>
+      {error !== undefined && <Error>{error}</Error>}
+    </Wrapper>
   );
 };
 

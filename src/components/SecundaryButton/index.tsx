@@ -2,13 +2,13 @@ import React from 'react';
 import {StyledSecundaryButton, StyledSecundaryButtonText} from './styles';
 
 type Props = {
-  onPress: () => void;
+  [key: string]: any;
   text: string;
 };
 
-const SecundaryButton = ({text, onPress}: Props) => {
+const SecundaryButton = ({text, ...props}: Props) => {
   return (
-    <StyledSecundaryButton onPress={onPress}>
+    <StyledSecundaryButton {...props}>
       <StyledSecundaryButtonText>{text}</StyledSecundaryButtonText>
     </StyledSecundaryButton>
   );
