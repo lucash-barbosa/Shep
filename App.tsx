@@ -1,8 +1,10 @@
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import Routes from './src/routes';
 import {StatusBar} from 'react-native';
 import {ThemeProvider} from 'styled-components/native';
 import theme from './src/global/styles/theme';
-import Auth from './src/routes/Auth';
+import {AuthContextProvider} from './src/context/AuthContext';
 
 const App = () => {
   return (
@@ -13,7 +15,11 @@ const App = () => {
         backgroundColor="transparent"
       />
       <ThemeProvider theme={theme}>
-        <Auth />
+        <NavigationContainer>
+          <AuthContextProvider>
+            <Routes />
+          </AuthContextProvider>
+        </NavigationContainer>
       </ThemeProvider>
     </>
   );
