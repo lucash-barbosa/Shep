@@ -1,8 +1,10 @@
-import React from 'react';
-import {SafeAreaView, View} from 'react-native';
+import main from '@app/assets/images/main.png';
 import Button from '@app/components/Button';
-import {StackProps} from '@app/interfaces/Navigation';
-import {mainMocks} from '@app/mocks';
+import { StackProps } from '@app/interfaces/NavigationType';
+import { mainMocks } from '@app/mocks';
+import React from 'react';
+import { SafeAreaView, View } from 'react-native';
+
 import {
   StyledImage,
   StyledText,
@@ -11,9 +13,7 @@ import {
   ViewButton,
 } from './styles';
 
-import main from '@app/assets/images/main.png';
-
-const Main = ({navigation}: StackProps) => {
+const Main = ({ navigation }: StackProps) => {
   return (
     <SafeAreaView>
       <View>

@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import Button from '@app/components/Button';
 import DefaultInput from '@app/components/Input';
 import InputPassword from '@app/components/InputPassword';
-import Button from '@app/components/Button';
 import SquareCheckbox from '@app/components/SquareCheckbox';
+import React, { useState } from 'react';
+
 import {
   Container,
   Wrapper,
@@ -18,11 +19,11 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const [usernameError, setUsernameError] = useState<string | undefined>(
-    undefined,
+    undefined
   );
   const [emailError, setEmailError] = useState<string | undefined>(undefined);
   const [passwordError, setPasswordError] = useState<string | undefined>(
-    undefined,
+    undefined
   );
   const [confirmPasswordError, setConfirmPasswordError] = useState<
     string | undefined
@@ -59,7 +60,7 @@ const SignUp = () => {
   const validatePassword = () => {
     if (!passwordRegExp.test(password)) {
       setPasswordError(
-        'Password must have at least one symbol, one uppercase and lowercase letter, and at least 5 characteres',
+        'Password must have at least one symbol, one uppercase and lowercase letter, and at least 5 characteres'
       );
     } else {
       setPasswordError(undefined);

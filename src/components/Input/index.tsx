@@ -1,13 +1,14 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Error, StyledInput, Wrapper} from './styles';
+
+import { Error, StyledInput, Wrapper } from './styles';
 
 type Props = {
-  [key: string]: any;
+  [key: string]: unknown;
   error?: string | undefined;
 };
 
-const DefaultInput = ({error, ...props}: Props) => {
+const DefaultInput = ({ error, ...props }: Props) => {
   return (
     <Wrapper>
       <StyledInput

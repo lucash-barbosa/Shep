@@ -1,10 +1,11 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import Routes from './src/routes';
-import {StatusBar} from 'react-native';
-import {ThemeProvider} from 'styled-components/native';
+import { StatusBar } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
+
+import { AuthContextProvider } from './src/context/AuthContext';
 import theme from './src/global/styles/theme';
-import {AuthContextProvider} from './src/context/AuthContext';
+import Routes from './src/routes';
 
 const App = () => {
   return (

@@ -1,7 +1,8 @@
-import React from 'react';
 import DefaultInput from '@app/components/Input';
 import InputPassword from '@app/components/InputPassword';
 import SquareCheckbox from '@app/components/SquareCheckbox';
+import React from 'react';
+
 import {
   Container,
   Wrapper,

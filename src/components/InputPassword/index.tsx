@@ -1,16 +1,16 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
-import {Error, StyledButton, StyledInput, Wrapper} from './styles';
-
-import EyeOpen from '@app/assets/icons/eye-open.svg';
 import EyeClose from '@app/assets/icons/eye-close.svg';
+import EyeOpen from '@app/assets/icons/eye-open.svg';
+import React, { useState } from 'react';
+
+import { Error, StyledButton, StyledInput, Wrapper } from './styles';
 
 type Props = {
-  [key: string]: any;
+  [key: string]: unknown;
   error?: string | undefined;
 };
 
-const InputPassword = ({error, ...props}: Props) => {
+const InputPassword = ({ error, ...props }: Props) => {
   const [hideText, setHideText] = useState(false);
 
   return (

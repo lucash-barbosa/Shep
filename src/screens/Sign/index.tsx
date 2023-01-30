@@ -1,7 +1,8 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import { StatusBar } from 'react-native';
+
 import SignUp from './SignUp';
-import {DivisorLine, StyledText, StyledWrapper} from './styles';
+import { DivisorLine, StyledText, StyledWrapper } from './styles';
 
 const Sign = () => {
   return (

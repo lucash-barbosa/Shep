@@ -1,14 +1,15 @@
-import React from 'react';
-import LottieView from 'lottie-react-native';
 import splashScreen from '@app/assets/gifs/SplashScreen.json';
-import {StyledView} from './styled';
-import {StackProps} from '@app/interfaces/Navigation';
+import { StackProps } from '@app/interfaces/NavigationType';
+import LottieView from 'lottie-react-native';
+import React from 'react';
 
-const SplashScreen = ({navigation}: StackProps) => {
+import { StyledView } from './styled';
+
+const SplashScreen = ({ navigation }: StackProps) => {
   const animationOnFinish = () => {
     navigation.reset({
       index: 0,
-      routes: [{name: 'Main'}],
+      routes: [{ name: 'Main' }],
     });
   };
   return (
