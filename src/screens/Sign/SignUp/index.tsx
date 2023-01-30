@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import DefaultInput from '../../../components/DefaultInput';
-import InputPassword from '../../../components/InputPassword';
-import PrimaryButton from '../../../components/PrimaryButton';
-import SquareCheckbox from '../../../components/SquareCheckbox';
+import DefaultInput from '@app/components/Input';
+import InputPassword from '@app/components/InputPassword';
+import Button from '@app/components/Button';
+import SquareCheckbox from '@app/components/SquareCheckbox';
 import {
   Container,
   Wrapper,
@@ -102,7 +102,7 @@ const SignUp = () => {
           placeholder="Confirm Password"
           error={confirmPasswordError}
         />
-        <PrimaryButton text="Sign Up" onPress={handleOnChange} />
+        <Button text="Sign Up" onPress={handleOnChange} />
       </Wrapper>
       <SquareCheckbox text="Remember Me" />
     </Container>
