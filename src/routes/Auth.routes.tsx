@@ -3,9 +3,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-import SplashScreen from '../screens/SplashScreen';
-import Main from '../screens/Main';
-import Sign from '../screens/Sign';
+import SplashScreen from '@app/screens/SplashScreen';
+import Main from '@app/screens/Main';
+import Sign from '@app/screens/Sign';
 
 const Auth = () => {
   return (

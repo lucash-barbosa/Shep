@@ -2,8 +2,8 @@
 import React, {useState} from 'react';
 import {Error, StyledButton, StyledInput, Wrapper} from './styles';
 
-import EyeOpen from '../../assets/icons/eye-open.svg';
-import EyeClose from '../../assets/icons/eye-close.svg';
+import EyeOpen from '@app/assets/icons/eye-open.svg';
+import EyeClose from '@app/assets/icons/eye-close.svg';
 
 type Props = {
   [key: string]: any;

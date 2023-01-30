@@ -1,8 +1,8 @@
 import React from 'react';
 import LottieView from 'lottie-react-native';
-import splashScreen from '../../assets/gifs/SplashScreen.json';
+import splashScreen from '@app/assets/gifs/SplashScreen.json';
 import {StyledView} from './styled';
-import {StackProps} from '../../interfaces/Navigation';
+import {StackProps} from '@app/interfaces/Navigation';
 
 const SplashScreen = ({navigation}: StackProps) => {
   const animationOnFinish = () => {
