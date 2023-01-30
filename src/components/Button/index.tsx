@@ -1,12 +1,12 @@
+import { ButtonType, TextButtonType } from '@app/interfaces/ButtonType';
 import React from 'react';
-import {StyledButton, StyledButtonText} from './styles';
 
-type Props = {
-  [key: string]: any;
+import { StyledButton, StyledButtonText } from './styles';
+
+interface Props extends ButtonType, TextButtonType {
+  [key: string]: unknown;
   text: string;
-  backgroundColor?: string;
-  textColor?: string;
-};
+}
 
 const Button = ({
   text,
