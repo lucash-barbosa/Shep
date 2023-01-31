@@ -1,13 +1,18 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  width: 90%;
-  margin: 20px auto;
+  padding: 20px 5%;
 `;
 
 export const Wrapper = styled.View`
   flex-direction: column;
   margin: 10px 0;
+`;
+
+export const WrapperForm = styled.View`
+  height: 300px;
+  justify-content: space-between;
+  margin: 5% 0;
 `;
 
 const DefaultText = styled.Text`
@@ -21,7 +26,7 @@ export const StyledTitle = styled.Text`
   font-size: 18px;
   line-height: 22px;
   color: #000;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `;
 
 export const StyledSubtitle = styled(DefaultText)`

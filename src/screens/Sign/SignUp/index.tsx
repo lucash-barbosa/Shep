@@ -1,8 +1,10 @@
 import Button from '@app/components/Button';
-import DefaultInput from '@app/components/Input';
+import Input from '@app/components/Input';
 import InputPassword from '@app/components/InputPassword';
 import SquareCheckbox from '@app/components/SquareCheckbox';
-import React, { useState } from 'react';
+import { AuthType } from '@app/interfaces/AuthType';
+import { Formik } from 'formik';
+import React from 'react';
 
 import {
   Container,
@@ -10,71 +12,11 @@ import {
   StyledSubtitle,
   StyledTitle,
   StyledLink,
+  WrapperForm,
 } from './styles';
+import Validates from './Validates';
 
 const SignUp = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
-  const [usernameError, setUsernameError] = useState<string | undefined>(
-    undefined
-  );
-  const [emailError, setEmailError] = useState<string | undefined>(undefined);
-  const [passwordError, setPasswordError] = useState<string | undefined>(
-    undefined
-  );
-  const [confirmPasswordError, setConfirmPasswordError] = useState<
-    string | undefined
-  >(undefined);
-
-  const usernameRegExp = /^.{1,10}$/;
-  const emailRegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
-  const passwordRegExp =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{5,})/;
-
-  const handleOnChange = () => {
-    validateUsername();
-    validateEmail();
-    validatePassword();
-    validateConfirmPassword();
-  };
-
-  const validateUsername = () => {
-    if (!usernameRegExp.test(username)) {
-      setUsernameError('Username must contain a maximum of 10 characters');
-    } else {
-      setUsernameError(undefined);
-    }
-  };
-
-  const validateEmail = () => {
-    if (!emailRegExp.test(email)) {
-      setEmailError('Email invalid');
-    } else {
-      setEmailError(undefined);
-    }
-  };
-
-  const validatePassword = () => {
-    if (!passwordRegExp.test(password)) {
-      setPasswordError(
-        'Password must have at least one symbol, one uppercase and lowercase letter, and at least 5 characteres'
-      );
-    } else {
-      setPasswordError(undefined);
-    }
-  };
-
-  const validateConfirmPassword = () => {
-    if (confirmPassword !== password) {
-      setConfirmPasswordError('Passwords should be the same');
-    } else {
-      setConfirmPasswordError(undefined);
-    }
-  };
-
   return (
     <Container>
       <Wrapper>
@@ -82,29 +24,68 @@ const SignUp = () => {
         <StyledSubtitle>Welcome! Already have a account?</StyledSubtitle>
         <StyledLink>Sign In</StyledLink>
       </Wrapper>
-      <Wrapper>
-        <DefaultInput
-          onChangeText={setUsername}
-          placeholder="Username"
-          error={usernameError}
-        />
-        <DefaultInput
-          onChangeText={setEmail}
-          placeholder="Email"
-          error={emailError}
-        />
-        <InputPassword
-          onChangeText={setPassword}
-          placeholder="Password"
-          error={passwordError}
-        />
-        <InputPassword
-          onChangeText={setConfirmPassword}
-          placeholder="Confirm Password"
-          error={confirmPasswordError}
-        />
-        <Button text="Sign Up" onPress={handleOnChange} />
-      </Wrapper>
+
+      <Formik
+        initialValues={{
+          username: '',
+          email: '',
+          password: '',
+          confirmPassword: '',
+        }}
+        validate={(values) => {
+          const errors: AuthType = {};
+
+          Validates(values, errors);
+
+          return errors;
+        }}
+        onSubmit={(values) => console.log(values)}
+      >
+        {({
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          values,
+          errors,
+          touched,
+        }) => (
+          <WrapperForm>
+            <Input
+              placeholder="Username"
+              onChangeText={handleChange('username')}
+              onBlur={handleBlur('username')}
+              value={values.username}
+              error={errors.username}
+              touched={touched.username}
+            />
+            <Input
+              placeholder="Email"
+              onChangeText={handleChange('email')}
+              onBlur={handleBlur('email')}
+              value={values.email}
+              error={errors.email}
+              touched={touched.email}
+            />
+            <InputPassword
+              placeholder="Password"
+              onChangeText={handleChange('password')}
+              onBlur={handleBlur('password')}
+              value={values.password}
+              error={errors.password}
+              touched={touched.password}
+            />
+            <InputPassword
+              placeholder="Confirm Password"
+              onChangeText={handleChange('confirmPassword')}
+              onBlur={handleBlur('confirmPassword')}
+              value={values.confirmPassword}
+              error={errors.confirmPassword}
+              touched={touched.confirmPassword}
+            />
+            <Button text="Sign Up" onPress={handleSubmit} />
+          </WrapperForm>
+        )}
+      </Formik>
       <SquareCheckbox text="Remember Me" />
     </Container>
   );

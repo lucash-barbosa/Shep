@@ -1,4 +1,4 @@
-import DefaultInput from '@app/components/Input';
+import Input from '@app/components/Input';
 import InputPassword from '@app/components/InputPassword';
 import SquareCheckbox from '@app/components/SquareCheckbox';
 import React from 'react';
@@ -20,7 +20,7 @@ const SignIn = () => {
         <StyledLink>Sign In</StyledLink>
       </Wrapper>
       <Wrapper>
-        <DefaultInput placeholder="Email" />
+        <Input placeholder="Email" />
         <InputPassword placeholder="Password" />
       </Wrapper>
       <SquareCheckbox text="Remember Me" />
