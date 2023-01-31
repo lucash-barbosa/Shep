@@ -1,16 +1,18 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
+import { View } from 'react-native';
 
-import { Error, StyledInput, Wrapper } from './styles';
+import { Error, StyledInput } from './styles';
 
 type Props = {
   [key: string]: unknown;
   error?: string | undefined;
+  touched?: any;
 };
 
-const DefaultInput = ({ error, ...props }: Props) => {
+const Input = ({ error = '', touched, ...props }: Props) => {
   return (
-    <Wrapper>
+    <View>
       <StyledInput
         {...props}
         placeholderTextColor="#cacaca"
@@ -20,9 +22,9 @@ const DefaultInput = ({ error, ...props }: Props) => {
         }}
         secureTextEntry={false}
       />
-      {error !== undefined && <Error>{error}</Error>}
-    </Wrapper>
+      {error !== '' && touched && <Error>{error}</Error>}
+    </View>
   );
 };
 
-export default DefaultInput;
+export default Input;

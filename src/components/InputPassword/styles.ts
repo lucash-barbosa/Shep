@@ -1,9 +1,5 @@
 import styled from 'styled-components/native';
 
-export const Wrapper = styled.View`
-  margin: 7px 0;
-`;
-
 export const StyledInput = styled.TextInput`
   padding: 10px 20px;
   background-color: #fff;
@@ -11,15 +7,15 @@ export const StyledInput = styled.TextInput`
   border-radius: 10px;
 `;
 
+export const StyledButton = styled.TouchableOpacity`
+  position: absolute;
+  top: 30%;
+  right: 5%;
+`;
+
 export const Error = styled.Text`
   font-family: 'Inter-Light';
   font-size: 12px;
   color: #ff0000;
   margin: 0 5px;
-`;
-
-export const StyledButton = styled.TouchableOpacity`
-  position: absolute;
-  top: 30%;
-  right: 5%;
 `;

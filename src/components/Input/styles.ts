@@ -1,9 +1,5 @@
 import styled from 'styled-components/native';
 
-export const Wrapper = styled.View`
-  margin: 7px 0;
-`;
-
 export const StyledInput = styled.TextInput`
   padding: 10px 20px;
   background-color: #fff;
