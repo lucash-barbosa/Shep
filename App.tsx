@@ -1,4 +1,4 @@
-import { NavigationContainer } from '@react-navigation/native';
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
@@ -8,6 +8,8 @@ import theme from './src/global/styles/theme';
 import Routes from './src/routes';
 
 const App = () => {
+  const navTheme = DefaultTheme;
+  navTheme.colors.background = '#fbf9f9';
   return (
     <>
       <StatusBar
@@ -16,7 +18,7 @@ const App = () => {
         backgroundColor="transparent"
       />
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
+        <NavigationContainer theme={navTheme}>
           <AuthContextProvider>
             <Routes />
           </AuthContextProvider>
