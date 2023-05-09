@@ -4,10 +4,11 @@ import { View } from 'react-native';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
 type Props = {
+  [key: string]: unknown;
   text?: string;
 };
 
-const SquareCheckbox = ({ text }: Props) => {
+const SquareCheckbox = ({ text, ...props }: Props) => {
   return (
     <View>
       <BouncyCheckbox
@@ -27,6 +28,7 @@ const SquareCheckbox = ({ text }: Props) => {
           marginLeft: -5,
         }}
         text={text}
+        {...props}
       />
     </View>
   );

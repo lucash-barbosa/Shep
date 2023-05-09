@@ -23,6 +23,24 @@
     "eslint-plugin-import-helpers"
   ],
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": [
+      1,
+      {
+        "allowExpressions": true
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      1
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      0
+    ],
+    "@typescript-eslint/ban-ts-ignore": [
+      0
+    ],
+    "@typescript-eslint/no-empty-interface": [
+      0
+    ],
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "indent": [

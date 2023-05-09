@@ -1,6 +1,6 @@
 import main from '@app/assets/images/main.png';
 import Button from '@app/components/Button';
-import { StackProps } from '@app/interfaces/NavigationType';
+import { MainStackNavigationProp, NavigationProps } from '@app/global/types';
 import { mainMocks } from '@app/mocks';
 import React from 'react';
 import { SafeAreaView, View } from 'react-native';
@@ -13,7 +13,7 @@ import {
   ViewButton,
 } from './styles';
 
-const Main = ({ navigation }: StackProps) => {
+const Main = ({ navigation }: NavigationProps<MainStackNavigationProp>) => {
   return (
     <SafeAreaView>
       <View>
@@ -27,11 +27,11 @@ const Main = ({ navigation }: StackProps) => {
         </ViewText>
         <ViewButton>
           <Button
-            onPress={() => console.log('botão pressionado')}
-            text="Log In"
+            onPress={() => navigation.navigate('Sign', { login: true })}
+            text="Login"
           />
           <Button
-            onPress={() => navigation.navigate('Sign')}
+            onPress={() => navigation.navigate('Sign', { login: false })}
             text="Sign Up"
             backgroundColor="white"
             textColor="darkGreen"

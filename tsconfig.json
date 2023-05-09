@@ -1,18 +1,40 @@
 // prettier-ignore
 {
-  "extends": "@tsconfig/react-native/tsconfig.json",     /* Recommended React Native TSConfig base */
+  "extends": "@tsconfig/react-native/tsconfig.json", /* Recommended React Native TSConfig base */
   "compilerOptions": {
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "module": "esnext",
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
+    ],
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
-    "paths" : {
-      "@app/*": ["src/*"]
+    "paths": {
+      "@app/*": [
+        "src/*"
+      ]
     },
     "types": [
       "jest",
       "@types/styled-components-react-native"
     ],
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
-
     /* Completeness */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
   }
 }

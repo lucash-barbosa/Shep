@@ -6,13 +6,33 @@ export const Container = styled.View`
 
 export const Wrapper = styled.View`
   flex-direction: column;
-  margin: 10px 0;
+  margin: 10px 0 30px 0;
 `;
 
 export const WrapperForm = styled.View`
-  height: 300px;
   justify-content: space-between;
-  margin: 5% 0;
+  row-gap: 30px;
+  margin: 10px 0;
+`;
+
+export const WrapperInput = styled.View`
+  justify-content: space-between;
+  row-gap: 20px;
+`;
+
+export const WrapperAuth = styled.View`
+  justify-content: space-between;
+  row-gap: 20px;
+`;
+
+export const WrapperError = styled.Text`
+  width: 80%;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: ${({ theme }) => theme.colors.palePink};
+  border: 1px solid ${({ theme }) => theme.colors.red};
 `;
 
 const DefaultText = styled.Text`
@@ -35,4 +55,8 @@ export const StyledSubtitle = styled(DefaultText)`
 
 export const StyledLink = styled(DefaultText)`
   color: #0da54b;
+`;
+
+export const StyledError = styled.Text`
+  color: ${({ theme }) => theme.colors.red};
 `;

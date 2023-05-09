@@ -1,4 +1,4 @@
-import { AuthType } from '@app/interfaces/AuthType';
+import { AuthType } from '@app/interfaces/Types';
 
 const Validates = (values: AuthType, errors: AuthType) => {
   // Vadilate username
@@ -19,12 +19,12 @@ const Validates = (values: AuthType, errors: AuthType) => {
   if (!values.password) {
     errors.password = 'Required';
   } else if (
-    !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{5,})/.test(
+    !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/.test(
       values.password
     )
   ) {
     errors.password =
-      'Password must include 1 lowercase, 1 uppercase, 1 digit, 1 special character and be at least 5 characters long.';
+      'Password must include 1 lowercase, 1 uppercase, 1 digit, 1 special character and be at least 8 characters long.';
   }
 
   // Vadilate confirmPassword

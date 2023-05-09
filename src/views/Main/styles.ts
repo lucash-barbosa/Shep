@@ -14,7 +14,7 @@ export const ViewText = styled.View`
 
 const DefaultFont = styled.Text`
   font-family: 'Inter-Regular';
-  color: ${({theme}) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const StyledTitle = styled(DefaultFont)`

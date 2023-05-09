@@ -1,15 +1,19 @@
+import { MainStackScreenProp } from '@app/global/types';
 import React from 'react';
 import { StatusBar } from 'react-native';
 
-import SignUp from './SignUp';
+import Login from './Login';
+import SignUp from './Signup';
 import { DivisorLine, StyledText, StyledWrapper } from './styles';
 
-const Sign = () => {
+const Sign = ({ route }: MainStackScreenProp) => {
   return (
     <>
       <StatusBar barStyle="light-content" />
       <StyledWrapper />
-      <SignUp />
+
+      {route.params.login ? <Login /> : <SignUp />}
+
       <DivisorLine>
         <StyledText>OR</StyledText>
       </DivisorLine>

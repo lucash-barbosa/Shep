@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Auth from './Auth.routes';
+import Main from './Main.routes';
 
 const Routes = () => {
-  return <Auth />;
+  return <Main />;
 };
 
 export default Routes;
